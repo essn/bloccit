@@ -11,6 +11,15 @@
    user.save!
  end
  users = User.all
+
+ # Create Topics
+ 15.times do
+   Topic.create!(
+     name:         Faker::Lorem.sentence,
+     description:  Faker::Lorem.paragraph
+   )
+ end
+  topics = Topic.all
  
  # Note: by calling `User.new` instead of `create`,
  # we create an instance of User which isn't immediately saved to the database.
@@ -25,6 +34,7 @@
  50.times do
    Post.create!(
      user:   users.sample,
+     topic:  topics.sample,
      title:  Faker::Lorem.sentence,
      body:   Faker::Lorem.paragraph
    )
@@ -45,12 +55,34 @@
  puts "#{Comment.count} comments created"
 
 
- user = User.first
- user.skip_reconfirmation!
- user.update_attributes!(
-   email: 'jessepledger@gmail.com',
-   password: 'password'
- )
+admin = User.new(
+  name: 'Admin User',
+  email: 'admin@admin.admin',
+  password: 'adminadmin',
+  role: 'admin'
+)
+
+admin.skip_confirmation!
+admin.save!
+
+moderator = User.new(
+  name: 'Moderator User',
+  email: 'moderator@moderator.moderator',
+  password: 'moderator',
+  role: 'moderator'
+  )
+
+moderator.skip_confirmation!
+moderator.save!
+
+member = User.new(
+  name: 'User User',
+  email: 'user@user.user',
+  password: 'useruser'
+)
+
+member.skip_confirmation!
+moderator.save!
 
 puts "Seed finished"
 puts "#{User.count} users created"

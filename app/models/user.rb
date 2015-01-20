@@ -23,6 +23,7 @@
 #  locked_at              :datetime
 #  created_at             :datetime
 #  updated_at             :datetime
+#  role                   :string
 #
 
 class User < ActiveRecord::Base
