@@ -19,7 +19,7 @@
      description:  Faker::Lorem.paragraph
    )
  end
-  topics = Topic.all
+ topics = Topic.all
  
  # Note: by calling `User.new` instead of `create`,
  # we create an instance of User which isn't immediately saved to the database.
@@ -31,14 +31,14 @@
 
 
  # Create Posts
- 50.times do
-   Post.create!(
-     user:   users.sample,
+50.times do
+  Post.create!(
+    user:   users.sample,
      topic:  topics.sample,
-     title:  Faker::Lorem.sentence,
-     body:   Faker::Lorem.paragraph
-   )
- end
+    title:  Faker::Lorem.sentence,
+    body:   Faker::Lorem.paragraph
+  )
+end
  posts = Post.all
  
  # Create Comments
@@ -82,7 +82,7 @@ member = User.new(
 )
 
 member.skip_confirmation!
-moderator.save!
+member.save!
 
 puts "Seed finished"
 puts "#{User.count} users created"

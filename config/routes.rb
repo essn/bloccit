@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-
-  get 'welcome/about'
-
   devise_for :users
-  resources :posts
+
+  #Adds a /topics/(id)/posts/(id), links posts to topics aka nested routes
+  resources :topics do
+    resources :posts, except: [:index]
+  end
 
   get 'about' => 'welcome#about'
 
