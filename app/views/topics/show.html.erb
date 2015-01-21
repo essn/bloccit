@@ -1,9 +1,5 @@
 <h1><%= @topic.name %></h1>
 
-<% if policy(@topic).update? %>
-  <% link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
-<% end %>
-
 <div class="row">
   <div class="col-md-8">
     <p class="lead"><%= @topic.description %>
@@ -24,14 +20,27 @@
         </div>
       </div>
     <% end %>
-
   </div>
 
-  <div class="col-md-4">
-    <% if policy(Post.new).create? %>
-      <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-success' %>
-    <% end %>
-  </div>
+  <% if policy(@topic).update? %>
+    <div class="col-md-2">
+      <% if policy(Post.new).create? %>
+        <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-success' %>
+      <% end %>
+    </div>
+
+    <div class="col-md-2">
+      <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
+    </div>
+
+  <% else %>
+    <div class="col-md-4">
+      <% if policy(Post.new).create? %>
+        <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-success' %>
+      <% end %>
+    </div>
+
+  <% end %>
 </div>
 
 
