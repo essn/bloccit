@@ -84,6 +84,15 @@ member = User.new(
 member.skip_confirmation!
 member.save!
 
+test_delete = User.new(
+  name: 'Delete me!',
+  email: 'delete@delete.delete',
+  password: 'deleteme'
+)
+
+test_delete.skip_confirmation!
+test_delete.save!
+
 puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{Post.count} posts created"
