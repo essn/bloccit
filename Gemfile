@@ -57,5 +57,6 @@ gem 'devise'
 gem 'figaro', '1.0'
 gem 'pundit'
 gem 'redcarpet'
+gem 'will_paginate', '~> 3.0.5'
 
 gem 'annotate'
