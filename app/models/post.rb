@@ -21,4 +21,6 @@ class Post < ActiveRecord::Base
   validates :body, length: { minimum: 20 }, presence: true
   validates :topic, presence: true
   validates :user, presence: true
+
+  mount_uploader :image, ImageUploader
 end

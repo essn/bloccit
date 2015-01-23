@@ -18,3 +18,10 @@
 
 # Ignore application configuration
 /config/application.yml
+
+#Carrierwave image
+public/uploads
+
+# What I think is the key for my cookies
+
+config/secrets.yml
