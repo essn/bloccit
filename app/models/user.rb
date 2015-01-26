@@ -24,6 +24,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  role                   :string
+#  avatar                 :string
 #
 
 class User < ActiveRecord::Base
@@ -34,6 +35,7 @@ class User < ActiveRecord::Base
          :confirmable
 
   has_many :posts
+  has_many :comments
 
   mount_uploader :avatar, AvatarUploader
 

@@ -7,7 +7,12 @@ Rails.application.routes.draw do
     resources :posts, except: [:index]
   end
 
+  resources :posts do
+    resources :comments, only: [:create]
+  end
+
   get 'about' => 'welcome#about'
 
-    root to: 'welcome#index'
+  root to: 'welcome#index'
 end
+

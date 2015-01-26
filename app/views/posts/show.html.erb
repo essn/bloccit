@@ -12,6 +12,15 @@
     <%= image_tag(@post.image.url) %>
   </div>
 
+
+  <small>
+  <div class="col-md-8">
+    <p>
+      <%= render partial: 'comments/comment', collection: @comments %>
+    </p>
+  </div>
+</small>
+
   <div class="col-md-4">
     <% if policy(@post).edit? %>
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
