@@ -18,7 +18,7 @@
   <small>
   <div class="col-md-8">
     <h4>Comments</h4>
-    <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %>
+    <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %> <!-- Was not sending through the variables!! -->
     <p><%= render @comments %></p>
   </div>
 </small>

@@ -1,14 +1,10 @@
 <% @comments.each do |comment| %>
   <div class="media">
     <div class="media-body">
-        <%= comment.body %>
-
-    </br>
-
-    <small>
-      submitted <%= time_ago_in_words(comment.created_at) %> time ago by 
-      <%= comment.user.name || comment.user.email %>
-    </small>
+      <%= comment.body %>
+      <small class="text-muted">
+        <p>insert date/time and user here if it would work</p>
+      </small>
 
     </div>
   </div>

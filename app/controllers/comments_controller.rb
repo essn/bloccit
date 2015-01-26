@@ -2,15 +2,21 @@ class CommentsController < ApplicationController
   def create
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.find(params[:post_id])
-    @comment = @post.comment.new(comment_params)
+    @comment = @post.comments.new(comment_params)
     @comment.user_id = current_user.id
-    authorize @comment
+    # authorize @comment
+
+    if @comment.save
+      redirect_to [@topic, @post], notice: "Comment saved successfully."
+    else
+      redirect_to [@topic, @post], notice: "Comment failed to save."
+    end
   end
 
   private
 
   def comment_params
-    params.require(:post).permit(:title) #May not need .permit(:title) because only one argument
+    params.require(:comment).permit(:body) #May not need .permit(:body) because only one argument
   end
 
 end
