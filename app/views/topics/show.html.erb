@@ -15,16 +15,16 @@
             <%= image_tag(post.image.thumb.url) if post.image? %>
           </small>
 
-        </br>
 
-        <small>
+        <small class="text-muted">
           submitted <%= time_ago_in_words(post.created_at) %> time ago by <%= post.user.name %>
           </br>
-          <%= post.comments.count %> comments
-          </small>
+        </small>
+
           <small>
-            <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
+            <%= post.comments.count %> comments
             submitted <%= time_ago_in_words(post.created_at) %> ago by
+            <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
             <%= post.user.name %></br>
             <%= post.comments.count %> Comments
           </small>
