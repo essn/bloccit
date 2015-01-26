@@ -5,10 +5,9 @@ Rails.application.routes.draw do
   #Adds a /topics/(id)/posts/(id), links posts to topics aka nested routes
   resources :topics do
     resources :posts, except: [:index]
-  end
-
-  resources :posts do
-    resources :comments, only: [:create]
+      resources :posts do
+        resources :comments, only: [:create]
+      end
   end
 
   get 'about' => 'welcome#about'

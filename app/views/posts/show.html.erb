@@ -18,7 +18,8 @@
   <small>
   <div class="col-md-8">
     <h4>Comments</h4>
-    <p><%= render partial: 'comments/comment', collection: @comments %></p>
+    <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %>
+    <p><%= render @comments %></p>
   </div>
 </small>
 

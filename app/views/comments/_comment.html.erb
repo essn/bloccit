@@ -5,8 +5,9 @@
 
     </br>
 
-    <small class="text-muted">
-      submitted <%= time_ago_in_words(comment.created_at) %> time ago by <%= @post.user.name %>
+    <small>
+      submitted <%= time_ago_in_words(comment.created_at) %> time ago by 
+      <%= comment.user.name || comment.user.email %>
     </small>
 
     </div>
