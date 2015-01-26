@@ -44,6 +44,10 @@ gem 'bootstrap-sass', '~> 3.1.1'
 # gem 'binding_of_caller'
 # gem 'better_errors'
 
+group :test do
+  gem 'rspec-rails', '~> 3.1.0'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -68,3 +72,5 @@ gem 'fog'
 gem 'meta_request'
 
 gem 'annotate'
+
+
