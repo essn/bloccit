@@ -95,6 +95,16 @@ test_delete = User.new(
   password: 'deleteme'
 )
 
+me = User.new(
+  name: 'Jesse Pledger',
+  email: "jessepledger@gmail.com",
+  password: 'jessepledger',
+  role: 'admin'
+)
+
+me.skip_confirmation!
+me.save!
+
 test_delete.skip_confirmation!
 test_delete.save!
 

@@ -10,6 +10,7 @@
 #  user_id    :integer
 #  topic_id   :integer
 #  image      :string
+#  rank       :float
 #
 
 include TestFactories
