@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: [:update, :show]
+  resources :users, only: [:update, :show, :index]
 
   #Adds a /topics/(id)/posts/(id), links posts to topics aka nested routes
   resources :topics do
     resources :posts, except: [:index], controller: 'topics/posts'
   end
   
-  resources :posts, only: [] do 
+  resources :posts, only: [:index] do 
     resources :comments, only: [:create, :destroy] 
     resources :favorites, only: [:create, :destroy]
 

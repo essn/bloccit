@@ -20,7 +20,7 @@
     <div class="col-md-8">
       <h4>Comments</h4>
         <%= render 'comments/form', comment: @comment, post: @post %>
-        <p><%= render @comments %></p>
+        <p><%= render partial: 'comments/comment', collection: @comments %></p>
     </div>
   </small>
 
