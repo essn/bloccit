@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body) #May not need .permit(:body) because only one argument
+    params.require(:comment).permit(:body, :user) #May not need .permit(:body) because only one argument
   end
 
 end
