@@ -2,11 +2,11 @@ require 'rails_helper'
 
 describe "Sign in flow" do
 
-  include TestFactories
+  
 
   it "redirects to the topics index" do
-    user = authenticated_user
-    visit root_path
+    user = create(:user)
+    visit topics_path
 
     within '.user-info' do
       click_link 'Sign In'

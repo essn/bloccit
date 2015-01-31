@@ -2,14 +2,14 @@ require 'rails_helper'
 
 describe Comment do
 
-  include TestFactories
+  
 
   describe "after_create" do
 
     before do
-      @post = associated_post
-      @user = authenticated_user
-      @comment = Comment.new(body: 'My body', post: @post, user_id: 10000)
+      @post = create(:post)
+      @user = create(:user)
+      @comment = create(:comment, user: @user, post: @post)
     end
 
      # We don't need to change anything for this condition;
@@ -17,7 +17,6 @@ describe Comment do
      context "with user's permission" do
 
       it "sends an email to users who have favorited the post" do
-        puts "hello"
         @user.favorites.where(post: @post).create
 
         allow( FavoriteMailer )

@@ -12,7 +12,7 @@
 
 describe Topic do
 
-include TestFactories
+
 
 describe "scopes" do
 
