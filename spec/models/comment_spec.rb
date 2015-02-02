@@ -36,6 +36,14 @@ describe Comment do
       end
      end
 
+    it "does not send emails to users who haven't" do
+      expect( FavoriteMailer )
+        .not_to receive(:new_comment)
+
+      @comment.save
+    end
+   end
+
      context "without permission" do
  
        before { @user.update_attribute(:email_favorites, false) }
