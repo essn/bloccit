@@ -311,6 +311,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  binding_of_caller
   bootstrap-sass (~> 3.2.0.2)
   byebug
   capybara
