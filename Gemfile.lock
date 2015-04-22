@@ -325,6 +325,7 @@ DEPENDENCIES
   fog
   jbuilder (~> 2.0)
   jquery-rails
+  mail
   meta_request
   mini_magick
   pg

@@ -56,6 +56,6 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
-
 gem 'meta_request'
+gem 'mail'
 
