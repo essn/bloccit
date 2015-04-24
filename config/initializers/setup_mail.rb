@@ -7,7 +7,6 @@ if Rails.env.development? || Rails.env.production?
     address:   ENV['MAILGUN_SMTP_SERVER'],
     user_name: ENV['MAILGUN_SMTP_LOGIN'],
     password:  ENV['MAILGUN_SMTP_PASSWORD'],
-    domain:    ENV['MAILGUN_SMTP_DOMAIN'],
     authentication: :plain,
     openssl_verify_mode: 'none'
   }
