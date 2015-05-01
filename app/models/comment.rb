@@ -26,24 +26,14 @@ class Comment < ActiveRecord::Base
   private
 
   def send_favorite_emails
-    puts "hello #{post.favorites} #{post.favorites.count}"
-    puts " testing again"
     post.favorites.each do |fav|
-      puts "in favorites loop #{fav.id}"
       if should_receive_update_for?(fav)
         FavoriteMailer.new_comment(fav.user, post, self).deliver
       end
     end
-
-    puts "#{post.favorites.first}"
-
-    # if post.favorites.first.should_receive_update_for?
-    #   FavoriteMailer.new_comment(fav.user, post, self).deliver
-    # end
   end
 
   def should_receive_update_for?(favorite)
-    puts "should receive update for says #{favorite.user.email_favorites?}"
     user_id != favorite.user_id && favorite.user.email_favorites?
   end
 end

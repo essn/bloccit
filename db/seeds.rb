@@ -64,7 +64,7 @@ admin = User.new(
   name: 'Admin User',
   email: 'admin@admin.admin',
   password: 'adminadmin',
-  role: 'admin'
+  role: 'password'
 )
 
 admin.skip_confirmation!
@@ -74,7 +74,7 @@ moderator = User.new(
   name: 'Moderator User',
   email: 'moderator@moderator.moderator',
   password: 'moderator',
-  role: 'moderator'
+  role: 'password'
   )
 
 moderator.skip_confirmation!
@@ -83,7 +83,7 @@ moderator.save!
 member = User.new(
   name: 'User User',
   email: 'user@user.user',
-  password: 'useruser'
+  password: 'password'
 )
 
 member.skip_confirmation!
@@ -92,13 +92,13 @@ member.save!
 test_delete = User.new(
   name: 'Delete me!',
   email: 'delete@delete.delete',
-  password: 'deleteme'
+  password: 'password'
 )
 
 me = User.new(
   name: 'Jesse Pledger',
   email: "jessepledger@gmail.com",
-  password: 'jessepledger',
+  password: 'password',
   role: 'admin'
 )
 

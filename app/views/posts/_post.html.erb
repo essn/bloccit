@@ -19,9 +19,9 @@
       <%= post.comments.count %> comments
       submitted <%= time_ago_in_words(post.created_at) %> ago by
       <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
-      <%= if post.user.name %>
+      <% if post.user.name %>
         <%= post.user.name %>
-      <%= else %>
+      <% else %>
         <%= post.user.email %>
       <% end %>
       </br>
