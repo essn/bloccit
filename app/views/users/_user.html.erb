@@ -5,7 +5,11 @@
 
   <div class="media-body">
     <h4 class="media-heading">
-      <%= link_to user.name, user %>
+      <% if user.name %>
+        <%= link_to user.name, user %>
+      <% else %>
+        <%= link_to user.email, user %>
+      <% end %>
     </h4>
 
     <small>
