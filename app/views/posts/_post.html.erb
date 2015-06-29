@@ -6,7 +6,9 @@
     </h4>
 
     <small>
-      <%= image_tag(post.image.thumb.url) if post.image? %>
+      <% if post.image? %>
+        <%= image_tag(post.image.thumb.url) %>
+      <% end %>
     </small>
 
 
@@ -18,7 +20,9 @@
     <small>
       <%= post.comments.count %> comments
       submitted <%= time_ago_in_words(post.created_at) %> ago by
-      <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
+      <% if post.user.avatar? %>
+        <%= image_tag(post.user.avatar.tiny.url) %>
+      <% end %>
       <% if post.user.name %>
         <%= post.user.name %>
       <% else %>
